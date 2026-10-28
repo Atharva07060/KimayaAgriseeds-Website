@@ -7,15 +7,61 @@ if (toggle && nav) {
     toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     toggle.textContent = isOpen ? '×' : '☰';
   });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
+      toggle.textContent = '\u2630';
+    });
+  });
 }
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Lightweight scroll feedback: page progress, a polished sticky header, and a return-to-top control.
+const scrollProgress = document.createElement('div');
+scrollProgress.className = 'scroll-progress';
+scrollProgress.setAttribute('aria-hidden', 'true');
+
+const backToTop = document.createElement('button');
+backToTop.className = 'back-to-top';
+backToTop.type = 'button';
+backToTop.setAttribute('aria-label', 'Back to top');
+backToTop.innerHTML = '<span aria-hidden="true">\u2191</span>';
+
+const siteHeader = document.querySelector('.header');
+document.body.append(scrollProgress, backToTop);
+
+let scrollUpdatePending = false;
+function updateScrollUI() {
+  const scrollableHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const progress = Math.min(window.scrollY / scrollableHeight, 1);
+  scrollProgress.style.transform = `scaleX(${progress})`;
+  siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
+  backToTop.classList.toggle('is-visible', window.scrollY > 480);
+  scrollUpdatePending = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!scrollUpdatePending) {
+    scrollUpdatePending = true;
+    window.requestAnimationFrame(updateScrollUI);
+  }
+}, { passive: true });
+window.addEventListener('resize', updateScrollUI, { passive: true });
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+});
+updateScrollUI();
+
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
-    '.intro, .product-teaser, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .bulk-contact, .next-season'
+    '.hero-copy, .hero-art, .trust-strip, .intro, .product-teaser, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
   );
   const staggerTargets = document.querySelectorAll(
-    '.hybrid-card, .gallery-card, .proof-slot, .trust-strip > div'
+    '.hero-catalogue-card, .hybrid-card, .gallery-card, .proof-slot, .trust-strip > div, .contact-card, .address-card, .visit-card, .form-intro, .contact-form'
   );
 
   revealTargets.forEach((element) => element.classList.add('reveal'));
