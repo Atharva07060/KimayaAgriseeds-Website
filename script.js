@@ -58,10 +58,10 @@ updateScrollUI();
 
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
-    '.hero-copy, .hero-art, .trust-strip, .intro, .product-teaser, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
+    '.hero-copy, .hero-art, .hero-field-visual, .trust-strip, .intro, .home-catalogue, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
   );
   const staggerTargets = document.querySelectorAll(
-    '.hero-catalogue-card, .hybrid-card, .gallery-card, .proof-slot, .trust-strip > div, .contact-card, .address-card, .visit-card, .form-intro, .contact-form'
+    '.hero-catalogue-card, .home-category-card, .home-hybrid-product, .hybrid-card, .gallery-card, .proof-slot, .trust-strip > div, .contact-card, .address-card, .visit-card, .form-intro, .contact-form'
   );
 
   revealTargets.forEach((element) => element.classList.add('reveal'));
