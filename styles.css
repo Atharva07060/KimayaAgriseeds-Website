@@ -322,3 +322,15 @@ body{font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.75}
 @media(max-width:760px){.hybrid-card{padding:11px 11px 0}.hybrid-image{height:clamp(165px,43vw,220px);padding:12px}.hybrid-info{padding:18px 5px 20px}.hybrid-info h3{margin:7px 0 12px}}
 @media(max-width:430px){.hybrid-card{padding:9px 9px 0}.hybrid-image{height:205px}.hybrid-info{padding:16px 4px 19px}}
 @media(prefers-reduced-motion:reduce){.process-orbit{animation:none}.process-step{transition:none}}
+
+
+/* Warm, consistent photo treatment for the real growing-season story. */
+.journey-gallery .gallery-card{overflow:hidden;border-radius:4px;box-shadow:0 8px 26px #243b2010;transition:transform .35s cubic-bezier(.2,.75,.25,1),box-shadow .35s ease}
+.journey-gallery .gallery-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px #243b2018}
+.journey-gallery .gallery-art{position:relative;background:#e2e7d8}
+.journey-gallery .gallery-art:after{content:"";position:absolute;inset:40% 0 0;pointer-events:none;background:linear-gradient(180deg,transparent,#1627191c);opacity:.55;transition:opacity .35s ease}
+.journey-gallery .gallery-art img{filter:saturate(.92) contrast(.98);transform:scale(1.015);transition:transform .7s cubic-bezier(.2,.75,.25,1),filter .5s ease}
+.journey-gallery .gallery-card:hover .gallery-art img{filter:saturate(1.04) contrast(1.01);transform:scale(1.055)}
+.journey-gallery .gallery-card:hover .gallery-art:after{opacity:.24}
+.journey-gallery .gallery-card figcaption{background:#fdfcf7}
+@media(prefers-reduced-motion:reduce){.journey-gallery .gallery-card,.journey-gallery .gallery-art:after,.journey-gallery .gallery-art img{transition:none!important}.journey-gallery .gallery-card:hover,.journey-gallery .gallery-card:hover .gallery-art img{transform:none}}
