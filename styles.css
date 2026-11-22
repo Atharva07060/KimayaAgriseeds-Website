@@ -334,3 +334,26 @@ body{font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.75}
 .journey-gallery .gallery-card:hover .gallery-art:after{opacity:.24}
 .journey-gallery .gallery-card figcaption{background:#fdfcf7}
 @media(prefers-reduced-motion:reduce){.journey-gallery .gallery-card,.journey-gallery .gallery-art:after,.journey-gallery .gallery-art img{transition:none!important}.journey-gallery .gallery-card:hover,.journey-gallery .gallery-card:hover .gallery-art img{transform:none}}
+
+
+/* R&D feature: calm botanical illustration, ready for the photo gallery to come later. */
+.rd-section{max-width:1120px;display:grid;grid-template-columns:1.08fr .92fr;gap:8%;align-items:center;padding:94px 5% 98px;scroll-margin-top:30px}
+.rd-copy .eyebrow{margin-bottom:17px}
+.rd-copy h2{font:500 clamp(36px,4.1vw,49px)/1.14 var(--serif);letter-spacing:-.045em;margin:0 0 20px}
+.rd-copy h2 em{font-weight:500;color:var(--forest)}
+.rd-copy>p:not(.eyebrow){color:#687064;font-size:11px;line-height:1.9;max-width:510px;margin:0 0 13px}
+.rd-feature{position:relative;min-height:360px;background:linear-gradient(145deg,#eef0e4,#e4e9d8);border:1px solid #dfe4d6;display:flex;flex-direction:column;justify-content:space-between;padding:20px 22px;overflow:hidden}
+.rd-feature:before{content:"";position:absolute;width:270px;height:270px;right:-95px;top:-115px;border-radius:50%;background:#e4b94d1c}
+.rd-feature-index{position:relative;z-index:1;font-size:8px;letter-spacing:.18em;color:#75816c}
+.rd-botanical{position:absolute;inset:34px 13% 34px;display:grid;place-items:center}
+.rd-botanical svg{width:min(100%,260px);height:auto;overflow:visible}
+.rd-botanical circle{fill:#f7f6ef50;stroke:#c7d0bd;stroke-width:1}
+.rd-stem,.rd-leaf,.rd-vein{fill:none;stroke:#557451;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.rd-leaf{fill:#728e63;stroke:#557451;stroke-width:1.5}
+.rd-leaf-two{fill:#9bac73}
+.rd-leaf-three{fill:#899b69}
+.rd-vein{stroke:#dfe8d2;stroke-width:1.5}
+.rd-feature-caption{position:relative;z-index:1;padding-top:15px;border-top:1px solid #cbd4c1;display:flex;flex-direction:column;gap:7px}
+.rd-feature-caption span{font-size:8px;letter-spacing:.15em;color:#6c7865}
+.rd-feature-caption b{font-size:17px;font-weight:500;color:var(--forest)}
+@media(max-width:760px){.rd-section{grid-template-columns:1fr;gap:26px;padding:65px 7%}.rd-copy h2{font-size:clamp(36px,9vw,46px)}.rd-feature{min-height:300px}.rd-botanical{inset:28px 15%}}

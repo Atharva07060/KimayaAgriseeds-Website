@@ -58,7 +58,7 @@ updateScrollUI();
 
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
-    '.hero-copy, .hero-art, .hero-field-visual, .trust-strip, .intro, .seed-process-section, .home-catalogue, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
+    '.hero-copy, .hero-art, .hero-field-visual, .trust-strip, .intro, .rd-section, .seed-process-section, .home-catalogue, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
   );
   const staggerTargets = document.querySelectorAll(
     '.hero-catalogue-card, .process-step, .home-category-card, .home-hybrid-product, .hybrid-card, .gallery-card, .proof-slot, .trust-strip > div, .contact-card, .address-card, .visit-card, .form-intro, .contact-form'
