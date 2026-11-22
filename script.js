@@ -146,3 +146,38 @@ if (contactForm) {
     }
   });
 }
+
+
+// Add a restrained pointer glow and a small parallax drift to the hero image on precise pointers.
+if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const heroVisual = document.querySelector('.hero-product-visual');
+  if (heroVisual) {
+    let frame = 0;
+    heroVisual.addEventListener('pointermove', (event) => {
+      if (frame) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const bounds = heroVisual.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width;
+        const y = (event.clientY - bounds.top) / bounds.height;
+        heroVisual.style.setProperty('--pointer-x', `${Math.round(x * 100)}%`);
+        heroVisual.style.setProperty('--pointer-y', `${Math.round(y * 100)}%`);
+        heroVisual.style.setProperty('--depth-x', `${(x - .5) * 7}px`);
+        heroVisual.style.setProperty('--depth-y', `${(y - .5) * 7}px`);
+      });
+    });
+    heroVisual.addEventListener('pointerleave', () => {
+      heroVisual.style.setProperty('--depth-x', '0px');
+      heroVisual.style.setProperty('--depth-y', '0px');
+      heroVisual.style.setProperty('--pointer-x', '50%');
+      heroVisual.style.setProperty('--pointer-y', '50%');
+    });
+  }
+
+  document.querySelectorAll('.home-category-card,.home-hybrid-product,.gallery-card,.proof-slot,.contact-card,.visit-card').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const bounds = card.getBoundingClientRect();
+      card.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
+      card.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
+    }, { passive: true });
+  });
+}
