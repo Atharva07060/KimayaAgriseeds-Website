@@ -58,10 +58,10 @@ updateScrollUI();
 
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
-    '.hero-copy, .hero-art, .hero-field-visual, .trust-strip, .intro, .home-catalogue, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
+    '.hero-copy, .hero-art, .hero-field-visual, .trust-strip, .intro, .seed-process-section, .home-catalogue, .closing, .page-hero, .product-feature, .hybrid-range, .bulk-banner, .product-gallery, .variety-proof, .contact-hero, .contact-grid, .contact-form-section, .contact-bottom, .next-season, .footer'
   );
   const staggerTargets = document.querySelectorAll(
-    '.hero-catalogue-card, .home-category-card, .home-hybrid-product, .hybrid-card, .gallery-card, .proof-slot, .trust-strip > div, .contact-card, .address-card, .visit-card, .form-intro, .contact-form'
+    '.hero-catalogue-card, .process-step, .home-category-card, .home-hybrid-product, .hybrid-card, .gallery-card, .proof-slot, .trust-strip > div, .contact-card, .address-card, .visit-card, .form-intro, .contact-form'
   );
 
   revealTargets.forEach((element) => element.classList.add('reveal'));
@@ -181,3 +181,29 @@ if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fin
     }, { passive: true });
   });
 }
+
+
+// Make the seed journey explorable with pointer, touch, and keyboard input.
+const processSteps = document.querySelectorAll('.process-step');
+const processCount = document.querySelector('#process-count');
+const processTitle = document.querySelector('#process-title');
+const processDescription = document.querySelector('#process-description');
+
+function selectProcessStep(step) {
+  processSteps.forEach((button) => {
+    const selected = button === step;
+    button.classList.toggle('is-active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  if (processCount) processCount.textContent = `${step.dataset.step} / 05`;
+  if (processTitle) processTitle.textContent = step.dataset.title;
+  if (processDescription) processDescription.textContent = step.dataset.description;
+}
+
+processSteps.forEach((step) => {
+  step.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') selectProcessStep(step);
+  });
+  step.addEventListener('focus', () => selectProcessStep(step));
+  step.addEventListener('click', () => selectProcessStep(step));
+});
