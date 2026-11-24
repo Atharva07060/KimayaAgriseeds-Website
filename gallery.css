@@ -3,3 +3,7 @@
 
 .section-partners .partner-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:42px;align-items:center}.partner-note{padding:24px 0;border-top:1px solid #d9dfd2;border-bottom:1px solid #d9dfd2}.partner-index{font-size:8px;letter-spacing:.16em;color:#8c815e}.partner-note p{font-size:13px;line-height:1.85;color:#667064;margin:13px 0 0;max-width:360px}.section-partners .gallery-card{width:100%}.section-partners .gallery-open{aspect-ratio:1.62/1}.section-partners .gallery-card figcaption{min-height:70px}@media(max-width:760px){.section-partners .partner-layout{grid-template-columns:1fr;gap:18px}.partner-note{padding:16px 0}.section-partners .gallery-open{aspect-ratio:1.35/1}}
 
+
+.brand-logo{width:54px;height:44px;object-fit:contain;display:block}
+.footer .brand-logo{width:47px;height:38px}
+@media(max-width:760px){.brand-logo{width:48px;height:40px}.footer .brand-logo{width:42px;height:35px}}

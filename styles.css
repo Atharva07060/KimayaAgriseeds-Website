@@ -357,3 +357,8 @@ body{font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.75}
 .rd-feature-caption span{font-size:8px;letter-spacing:.15em;color:#6c7865}
 .rd-feature-caption b{font-size:17px;font-weight:500;color:var(--forest)}
 @media(max-width:760px){.rd-section{grid-template-columns:1fr;gap:26px;padding:65px 7%}.rd-copy h2{font-size:clamp(36px,9vw,46px)}.rd-feature{min-height:300px}.rd-botanical{inset:28px 15%}}
+
+/* Use the supplied KAS crest with the readable wordmark in site navigation. */
+.brand img{width:54px;height:44px;object-fit:contain;border-radius:0;mix-blend-mode:multiply}
+.footer-brand img{width:47px;height:39px}
+@media(max-width:760px){.brand img{width:48px;height:40px}.footer-brand img{width:42px;height:35px}}
