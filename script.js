@@ -188,6 +188,11 @@ const processSteps = document.querySelectorAll('.process-step');
 const processCount = document.querySelector('#process-count');
 const processTitle = document.querySelector('#process-title');
 const processDescription = document.querySelector('#process-description');
+const processProgress = document.querySelector('#process-progress');
+const processProgressBar = document.querySelector('#process-progress-bar');
+const processProgressLabel = document.querySelector('#process-progress-label');
+const processCenterCount = document.querySelector('#process-center-count');
+const processCenterTitle = document.querySelector('#process-center-title');
 
 function selectProcessStep(step) {
   processSteps.forEach((button) => {
@@ -198,6 +203,12 @@ function selectProcessStep(step) {
   if (processCount) processCount.textContent = `${step.dataset.step} / 05`;
   if (processTitle) processTitle.textContent = step.dataset.title;
   if (processDescription) processDescription.textContent = step.dataset.description;
+  const stepNumber = Number.parseInt(step.dataset.step, 10);
+  if (processProgress) processProgress.setAttribute('aria-valuenow', String(stepNumber));
+  if (processProgressBar) processProgressBar.style.width = `${stepNumber * 20}%`;
+  if (processProgressLabel) processProgressLabel.textContent = `Step ${stepNumber} of 5`;
+  if (processCenterCount) processCenterCount.textContent = `STEP ${step.dataset.step} / 05`;
+  if (processCenterTitle) processCenterTitle.textContent = step.dataset.title;
 }
 
 processSteps.forEach((step) => {

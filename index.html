@@ -31,22 +31,26 @@
     <div class="seed-process-copy">
       <p class="eyebrow"><i></i> FROM FIELD TO FARMER</p>
       <h2>Seeds move<br>through <em>careful steps.</em></h2>
-      <p class="seed-process-intro">Explore the stages in our seed-processing journey. Select a step to see what happens along the way.</p>
+      <p class="seed-process-intro">Every seed follows a considered journey. Select a stage to explore how care and preparation come together.</p>
       <div class="process-detail" id="process-detail" aria-live="polite">
         <span class="process-count" id="process-count">01 / 05</span>
         <h3 id="process-title">Cleaning</h3>
         <p id="process-description">Seeds are cleaned to remove dust, plant residue and other unwanted material.</p>
       </div>
+      <div class="process-progress-wrap">
+        <div class="process-progress-meta"><span>PROCESS PROGRESS</span><span id="process-progress-label">Step 1 of 5</span></div>
+        <div class="process-progress" id="process-progress" role="progressbar" aria-label="Selected process step" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"><span id="process-progress-bar"></span></div>
+      </div>
       <p class="process-hint"><span aria-hidden="true">↗</span> Hover, focus or select a stage to explore it</p>
     </div>
     <div class="process-wheel" role="group" aria-label="Five seed-processing stages">
       <div class="process-orbit" aria-hidden="true"></div>
-      <div class="process-wheel-center" aria-hidden="true"><span>SEED</span><b>PROCESS</b><i>✳</i></div>
-      <button class="process-step process-step-cleaning is-active" type="button" data-step="01" data-title="Cleaning" data-description="Seeds are cleaned to remove dust, plant residue and other unwanted material." aria-pressed="true"><span>01</span><b>Cleaning</b></button>
-      <button class="process-step process-step-drying" type="button" data-step="02" data-title="Drying" data-description="Seed moisture is brought to a suitable level for careful handling and storage." aria-pressed="false"><span>02</span><b>Drying</b></button>
-      <button class="process-step process-step-grading" type="button" data-step="03" data-title="Grading" data-description="Seeds are sorted into grades to support consistency across the product." aria-pressed="false"><span>03</span><b>Grading</b></button>
-      <button class="process-step process-step-treating" type="button" data-step="04" data-title="Treating" data-description="Seeds are coated with protective material as part of the treatment stage." aria-pressed="false"><span>04</span><b>Treating</b></button>
-      <button class="process-step process-step-packaging" type="button" data-step="05" data-title="Packaging" data-description="Processed seeds are packed for storage and distribution." aria-pressed="false"><span>05</span><b>Packaging</b></button>
+      <div class="process-wheel-center" aria-hidden="true"><span id="process-center-count">STEP 01 / 05</span><b id="process-center-title">Cleaning</b><i>✳</i></div>
+      <button class="process-step process-step-cleaning is-active" type="button" data-step="01" data-title="Cleaning" data-description="Seeds are cleaned to remove dust, plant residue and other unwanted material." aria-pressed="true"><span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M2 12h4m12 0h4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8m0-14.2-2.8 2.8m-8.6 8.6-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg></span><span class="process-number">01</span><b>Cleaning</b></button>
+      <button class="process-step process-step-drying" type="button" data-step="02" data-title="Drying" data-description="Seed moisture is brought to a suitable level for careful handling and storage." aria-pressed="false"><span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="process-number">02</span><b>Drying</b></button>
+      <button class="process-step process-step-grading" type="button" data-step="03" data-title="Grading" data-description="Seeds are sorted into grades to support consistency across the product." aria-pressed="false"><span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M6 12h12M8 18h8"/><circle cx="7" cy="6" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="11" cy="18" r="1"/></svg></span><span class="process-number">03</span><b>Grading</b></button>
+      <button class="process-step process-step-treating" type="button" data-step="04" data-title="Treating" data-description="Seeds are coated with protective material as part of the treatment stage." aria-pressed="false"><span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4c-8 0-14 3-14 9a6 6 0 0 0 6 6c6 0 8-7 8-15Z"/><path d="M4 21c3-5 7-8 12-11"/></svg></span><span class="process-number">04</span><b>Treating</b></button>
+      <button class="process-step process-step-packaging" type="button" data-step="05" data-title="Packaging" data-description="Processed seeds are packed for storage and distribution." aria-pressed="false"><span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 7 9-4 9 4v11l-9 4-9-4V7Z"/><path d="m3 7 9 4 9-4M12 11v11M8 5l9 4"/></svg></span><span class="process-number">05</span><b>Packaging</b></button>
     </div>
   </div>
 </section>
