@@ -412,3 +412,30 @@ body{font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.75}
 @media(max-width:760px){.process-detail{min-height:112px}.process-progress-wrap{margin-left:22px}.process-wheel-center{width:38%}.process-step{width:27%}.process-icon{width:22px;height:22px}.process-icon svg{width:19px;height:19px}.process-step b{font-size:10px}}
 @media(max-width:400px){.process-step{width:29%}.process-step b{font-size:9px}.process-icon{width:19px;height:19px}.process-icon svg{width:17px;height:17px}.process-number{font-size:6px}.process-wheel-center b{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.process-wheel-center,.process-wheel-center i,.process-icon,.process-progress>span,.process-step,.process-step:hover .process-icon,.process-step.is-active .process-icon{transition:none!important}.process-wheel-center i,.process-step:hover .process-icon,.process-step.is-active .process-icon{transform:none!important}.process-step:hover,.process-step:focus-visible,.process-step.is-active{transform:none!important}.process-step-drying,.process-step-drying:hover,.process-step-drying:focus-visible,.process-step-drying.is-active{transform:translateX(-50%)!important}}
+
+
+/* Quick-answer accordion for cotton variety visitors. */
+.product-faq{background:linear-gradient(135deg,#f7f6ef,#eef1e6);padding:76px max(calc((100% - 1000px)/2),7%) 82px}
+.product-faq-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:.78fr 1.22fr;gap:8%;align-items:start}
+.product-faq-heading .eyebrow{margin-bottom:15px}
+.product-faq-heading h2{font:500 clamp(34px,4vw,46px)/1.15 var(--sans);letter-spacing:-.045em;margin:0 0 15px}
+.product-faq-heading h2 em{font-weight:500;color:var(--forest)}
+.product-faq-heading>p:not(.eyebrow){font-size:11px;color:#72796e;line-height:1.85;max-width:280px;margin:0 0 18px}
+.product-faq-heading .text-link{font-size:10px}
+.product-faq-list{border-top:1px solid #d9dfd3}
+.product-faq-list details{border-bottom:1px solid #d9dfd3}
+.product-faq-list summary{list-style:none;display:grid;grid-template-columns:34px 1fr 32px;gap:11px;align-items:center;min-height:67px;cursor:pointer;color:#364432}
+.product-faq-list summary::-webkit-details-marker{display:none}
+.product-faq-list summary:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:2px}
+.faq-number{font-size:8px;letter-spacing:.12em;color:#a78a42}
+.product-faq-list summary b{font-size:12px;font-weight:600;transition:color .2s ease}
+.product-faq-list summary:hover b,.product-faq-list details[open] summary b{color:var(--forest)}
+.product-faq-list summary i{width:27px;height:27px;border:1px solid #ccd4c5;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:17px;color:var(--forest);transition:transform .25s ease,background .25s ease,border-color .25s ease}
+.product-faq-list details[open] summary i{transform:rotate(45deg);background:#e2eadb;border-color:#b7c5af}
+.faq-answer{padding:0 40px 19px 45px;animation:faq-reveal .25s ease both}
+.faq-answer p{font-size:11px;color:#70766c;line-height:1.8;margin:0 0 8px}
+.faq-answer a{font-size:10px;color:var(--forest);border-bottom:1px solid #b7c5af;padding-bottom:3px}
+.faq-answer a span{margin-left:7px;color:#b38b2e}
+@keyframes faq-reveal{from{opacity:0;translate:0 -4px}to{opacity:1;translate:0 0}}
+@media(max-width:760px){.product-faq{padding:58px 7%}.product-faq-inner{grid-template-columns:1fr;gap:28px}.product-faq-heading h2{font-size:clamp(35px,8vw,44px)}.product-faq-list summary{min-height:62px;grid-template-columns:29px 1fr 30px;gap:8px}.product-faq-list summary b{font-size:11px}.faq-answer{padding:0 33px 17px 38px}}
+@media(prefers-reduced-motion:reduce){.product-faq-list summary b,.product-faq-list summary i{transition:none}.faq-answer{animation:none}}
