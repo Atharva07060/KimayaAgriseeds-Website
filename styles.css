@@ -362,3 +362,17 @@ body{font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.75}
 .brand img{width:54px;height:44px;object-fit:contain;border-radius:0;mix-blend-mode:multiply}
 .footer-brand img{width:47px;height:39px}
 @media(max-width:760px){.brand img{width:48px;height:40px}.footer-brand img{width:42px;height:35px}}
+
+
+/* Field photograph for the Research & Development feature. */
+.rd-feature{min-height:360px;padding:0;background:#e3e8d8}
+.rd-photo{position:absolute;inset:0}
+.rd-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 43%;filter:saturate(.9);transition:transform .75s cubic-bezier(.2,.75,.25,1),filter .4s ease}
+.rd-feature:hover .rd-photo img{transform:scale(1.035);filter:saturate(1)}
+.rd-feature:before{position:absolute;inset:0;top:0;right:0;width:auto;height:auto;z-index:1;border-radius:0;background:linear-gradient(180deg,#122316b8 0%,#12231618 35%,#12231608 55%,#122316c9 100%);transform:none}
+.rd-feature-index{position:absolute;top:20px;left:22px;z-index:2;color:#fff;letter-spacing:.18em}
+.rd-feature-caption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:18px 22px 22px;border-top:1px solid #ffffff4d;display:flex;flex-direction:column;gap:7px}
+.rd-feature-caption span{font-size:8px;letter-spacing:.15em;color:#eef1e5}
+.rd-feature-caption b{font-size:18px;font-weight:600;color:#fff}
+@media(max-width:760px){.rd-feature{min-height:300px}.rd-feature-index{top:17px;left:18px}.rd-feature-caption{padding:15px 18px 18px}}
+@media(prefers-reduced-motion:reduce){.rd-photo img,.rd-feature:hover .rd-photo img{transition:none;transform:none}}
